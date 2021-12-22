@@ -2,11 +2,104 @@
 {% load static %}
 
 {% block meta %}
-<title>Hello, world!</title>
+<title>Pemograman Lanjut</title>
 {% endblock meta %}
 
 {% block content %}
-  <h1>Hello, world!</h1>
-  <p><img src="{% static 'img/django-logo-negative.svg' %}"></p>
-  <marquee>Halo, I'm Azima</marquee>
+<header>
+    <div class="container d-flex justify-content-between align-items-center">
+        <div id="logo">
+            <h7>
+                <p1 style="font-weight: bolder">Pemograman Lanjut - Perhitungan Transformasi Dilatasi</p1>
+            </h7>
+        </div>
+
+        <!-- .navbar -->
+    </div>
+</header>
+<!-- End Header -->
+
+<!-- ======= Hero Section ======= -->
+<section id="hero">
+    <div class="card" data-aos="zoom-out">
+        <div class="row">
+            <div class="column" style="margin-top: auto; margin-bottom: auto">
+                <table style="color: black">
+                    <tr>
+                    <td style="width: 160px"><img src="{% static 'img/foto-azima.jpg' %}" style="height: 5cm; border-radius: 25pt"/></td>
+                    <td style="width: 200px; vertical-align:top">
+                        Nama<br>
+                        NIM<br>
+                        Jurusan<br>
+                        Fakultas<br>
+                        email<br>
+                    </td>
+                    <td style="width:10px; vertical-align:top">
+                        :<br>
+                        :<br>
+                        :<br>
+                        :<br>
+                        :<br>
+                    </td>
+                    <td style="width:400px; vertical-align:top">
+                        Azimatul Matsniya<br>
+                        181810101064<br>
+                        Matematika<br>
+                        Fakultas Matematika dan Ilmu Pengetahuan Alam<br>
+                        azimatulmatsniya@gmail.com<br>
+                    </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+</section>
+<form method="post">
+    {% csrf_token %}
+    <table style="color: black">
+        <tr>
+        <td style="width:350px; vertical-align:top">
+    <div class="mb-3">
+        <label for="formGroupExampleInput" class="form-label">Titik x </label>
+        <input type="text" class="form-control" id="formGroupExampleInput1" placeholder="Input nilai x dari titik yang akan didilatasi"
+               name="titik x">
+    </div>
+     <div class="mb-3">
+        <label for="formGroupExampleInput" class="form-label">Titik y</label>
+        <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Input nilai y dari titik yang akan didilatasi"
+               name="titik y">
+    </div>
+    <div class="mb-3">
+        <label for="formGroupExampleInput" class="form-label">Skala Dilatasi</label>
+        <input type="text" class="form-control" id="formGroupExampleInput3" placeholder="Input Skala Dilatasi"
+               name="skala">
+    </div>
+        </td>
+        <td style="width:350px; vertical-align:top">
+     <div class="mb-3">
+        <label for="formGroupExampleInput" class="form-label">Pusat Dilatasi x</label>
+        <input type="text" class="form-control" id="formGroupExampleInput4" placeholder="Input nilai x dari titik pusat dilatasi"
+               name="pusat x">
+    </div>
+     <div class="mb-3">
+        <label for="formGroupExampleInput" class="form-label">Pusat Dilatasi y</label>
+        <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Input nilai y dari titik pusat dilatasi"
+               name="pusat y">
+    </div>
+        </td>
+        </tr>
+        <tr>
+            <td style="width:350px; vertical-align:top">
+    <button type="submit" class="btn btn-success">Cek Hasil</button>
+        </td></tr>
+        <tr>
+            <td style="width:350px; vertical-align:top">
+    <div class="mb-3">
+        <label for="formGroupExampleOutput2" class="form-label">Titik Hasil Dilatasi</label>
+        <output type="text" class="form-control" id="formGroupExampleOutput2" name="keluar">{{keluar}}</output>
+    </div>
+            </td>
+        </tr>
+    </table>
+</form>
 {% endblock content %}
